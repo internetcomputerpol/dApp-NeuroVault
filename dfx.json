@@ -1,0 +1,26 @@
+{
+  "canisters": {
+    "NeroVault_backend": {
+      "main": "src/NeroVault_backend/main.mo",
+      "type": "motoko"
+    },
+    "NeroVault_frontend": {
+      "dependencies": [
+        "NeroVault_backend"
+      ],
+      "source": [
+        "src/NeroVault_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "NeroVault_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}

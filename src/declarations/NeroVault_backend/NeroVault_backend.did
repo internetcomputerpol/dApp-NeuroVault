@@ -1,0 +1,47 @@
+type specjalizacja = 
+ variant {
+   Cwaniak;
+   Ranger;
+   Technik;
+   Wojownik;
+ };
+type profesja = 
+ variant {
+   Chemik;
+   Ganger;
+   Gladiator;
+   Kurier;
+   Mafiozo;
+   Medyk;
+   Szaman;
+   WojownikAutostrad;
+   Zlodziej;
+ };
+type pochodzenie = 
+ variant {
+   Detroid;
+   Hegemonia;
+   Miami;
+   NowyJork;
+   Posterunek;
+   Texas;
+   Vegas;
+ };
+type Postac = 
+ record {
+   budowa: int8;
+   charakter: int8;
+   imie: text;
+   percepcja: int8;
+   pochodzenie: pochodzenie;
+   profesja: profesja;
+   specjalizacja: specjalizacja;
+   spryt: int8;
+   wiek: int16;
+   zrecznosc: int8;
+ };
+service : {
+  createPostac: (text, int16, pochodzenie, specjalizacja, profesja, int8,
+   int8, int8, int8, int8) -> (nat);
+  readPostac: (nat) -> (opt Postac);
+}
